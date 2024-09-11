@@ -12,14 +12,14 @@
         <div class="hero">
             <h1 style="margin-bottom: 30px; font-size: 2.5rem;">Hello! I am Hayden Kong</h1>
             <p style="margin-bottom: 30px; font-size: 1.2rem;">Student and Front-end Developer in Australia.</p>
-            <a href="#"><button class="button" id="projectBtn">My Projects</button></a>
-            <a href="#"><button class="button">Contact me</button></a>
+            <a href="projects.html"><button class="button" id="projectBtn">My Projects</button></a>
+            <a href="contact.html"><button class="button">Contact me</button></a>
         </div>
     
         <h1 class="header">About Me</h1>
         <div class="about">
             <div class="about-photo">
-                <img src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png" alt="Your Photo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Adelaide_-_SA_%2825091207887%29.jpg" alt="Your Photo">
             </div>
             <div class="about-text">
                 <p style="font-size: 1.2rem;">
@@ -72,11 +72,19 @@
                 </div>
             </div>
         </div>
-        
+
+        <!-- Call to action -->
+        <div class="cta">
+            <h1 class="cta-header">Ready to start your project?</h1>
+            <p class="cta-text">Let's work together to create something amazing. Contact me now to get started!</p>
+            <a href="contact.html"><button class="button">Contact me</button></a>
+        </div>
+
+
     </main>
 
     <footer>
-        Copyright 2024 Hayden Kong. All rights reserved. Content for educational pursposes only.
+        <p id="copyright">&copy; 2024 Hayden Kong. All rights reserved.</p>
     </footer>
 
 
@@ -84,23 +92,37 @@
         const projectBtn = document.getElementById('projectBtn')
         projectBtn.addEventListener('click', () => {
             const jsConfetti = new JSConfetti()
-            jsConfetti.addConfetti({
-                confettiNumber: 20,
-                emojis: ['🌈', '⚡️', '💥', '✨', '💫', '🌸'],
-            })
-
             jsConfetti.addConfetti()
         })
         window.addEventListener('load', () => {
             const jsConfetti = new JSConfetti()
-            jsConfetti.addConfetti({
-                confettiNumber: 1,
-                emojis: ['🌈', '⚡️', '💥', '✨', '💫', '🌸'],
-            })
-
             jsConfetti.addConfetti()
         })
-    </script>
+
+        
+
+        const time = new Date();
+        const copyright = document.getElementById("copyright");
+        copyright.innerHTML = '&copy; 2024 Hayden Kong. All rights reserved. The current time is: ' + time;
+        console.log(time)
+
+        async function updateTimer(){
+            const time = new Date();
+            copyright.innerHTML = '&copy; 2024 Hayden Kong. All rights reserved. The current time is: ' + time;
+        }
+
+        var t=setInterval(updatetimer(),1000);
+
+        document.addEventListener("DOMContentLoaded", (event) => {
+            console.log("DOM fully loaded and parsed");
+            
+
+            
+        });
+
+        
+
+
     </script>
     
 </body>

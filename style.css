@@ -12,6 +12,7 @@ body{
     margin: 0px 150px;
     margin-top: 150px;
     margin-bottom: 150px;
+    margin-left: 50px;
 }
 
 .button{
@@ -42,6 +43,11 @@ body{
     margin-top: 50px;
     margin-bottom: 15px;
     text-align: center;
+    /* text decoration underline with some space*/
+    text-decoration: dotted underline;
+    text-underline-offset: 10px;
+
+
 }
 
 main {
@@ -68,6 +74,12 @@ main {
     max-width: 100%;
     height: auto;
     border-radius: 10px;
+    transition: 0.3s;
+}
+
+.about-photo img:hover {
+    transform: rotate(-3deg);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 @media (min-width: 768px) {
@@ -129,4 +141,115 @@ main {
 .tile-level {
     font-size: 0.9rem;
     color: #cccccc;
+}
+
+.tile img{
+    transition: 0.3s;
+}
+
+.tile img:hover{
+    transform: rotate(-20deg);
+}
+
+/* CTA */
+.cta {
+    padding: 150px 50px;
+    text-align: center;
+}
+.cta-header {
+    font-size: 2rem;
+    margin-bottom: 40px;
+}
+.cta-text {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+}
+
+
+
+/* CONTACT */
+input{
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1.2rem;
+    background-color: #003566;
+    color: #ffffff;
+    outline: none;
+    font-family: 'Cascadia Code', sans-serif;
+}
+
+input:hover{
+    background-color: #00417e;
+}
+
+textarea{
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1.2rem;
+    width: 500px;
+    height: 200px;
+    background-color: #003566;
+    color: #ffffff;
+    outline: none;
+}
+
+textarea:hover{
+    background-color: #00417e;
+}
+
+.contact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* PROJECTS */
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.project {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin: 10px;
+    background-color: #003566;
+    color: #ffffff;
+    border-radius: 5px;
+    box-sizing: border-box;
+    text-align: left;
+    font-size: 1.2rem;
+    min-width: 250px;
+    margin-bottom: 10px;
+    transition: 0.2s;
+    max-width: 350px;
+}
+
+.project:hover {
+    background-color: #00417e;
+    box-shadow: 0 0 20px rgba(97, 97, 97, 0.5);
+    transform: scale(1.02);
+}
+
+.project img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+
+/* FOOTER */
+footer{
+    padding: 5px 20px;
+    background-color: #013872;
+    border-radius: 10px;
+    text-align: center;
 }
