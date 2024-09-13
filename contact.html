@@ -41,13 +41,13 @@
 
     <script>
         
-        const sendBtn = document.getElementById('sendBtn')
-        sendBtn.addEventListener('click', () => {
-            const jsConfetti = new JSConfetti()
-            jsConfetti.addConfetti()
-        })
-
         function sendMsg() {
+            // check if inputs are empty
+            if (document.getElementById('name').value === '' || document.getElementById('email').value === '' || document.getElementById('message').value === '') {
+                alert('Please fill in all fields or email hello@haydenkong.dev for assistance.')
+                return
+            }
+
             console.log('DEV MODE: Message button clicked')
             // POST REQUEST TO api.pixelverse.tech/systems/contact
             const name = document.getElementById('name').value
@@ -58,10 +58,33 @@
             console.log('DEV MODE: Email:', email)
             console.log('DEV MODE: Message:', message)
 
-            
+            // ------------- API ----------------
+            // const emailData = {
+            //     name: name,
+            //     email: email,
+            //     message: message
+            // }
+
+            // fetch('https://api.pixelverse.tech/systems/contact', {
+            //     method: 'POST',
+            //     headers: {
+            //         'Content-Type': 'application/json'
+            //     },
+            //     body: JSON.stringify(emailData)
+            // })
+
+            // alert('Message sent!')
+            // ----------------------------------
+
+            // manual send email instead - user side
+            // do this until backend api is ready to connect with nodejs, zapier automations and with supabase db
+            window.open(`mailto: hello@haydenkong.dev?subject=New message from ${name}&body=${message}`)
+
+            const jsConfetti = new JSConfetti()
+            jsConfetti.addConfetti()
 
         }
-    </script>
+
     </script>
     
 </body>

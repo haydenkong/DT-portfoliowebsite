@@ -253,3 +253,10 @@ footer{
     border-radius: 10px;
     text-align: center;
 }
+
+.viewprojectURL{
+    font-size: 1.2rem;
+    color: #9798ff;
+    text-decoration: line;
+    transition: 0.3s;
+}
