@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hayden Kong</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="main.css">
     <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
 </head>
 <body>
@@ -23,7 +23,10 @@
             </div>
             <div class="about-text">
                 <p style="font-size: 1.2rem;">
-                    I am a student and front-end developer based in Australia. I have experience in creating dynamic and good UX/UI websites using HTML, CSS, and JavaScript. I am passionate about web development and always eager to learn new technologies to improve my skills. I am currently learning Vue.js, Python and NodeJS to expand my knowledge and build more interactive web applications.
+                    I am a <strong>student and front-end developer</strong> based in Australia. I have experience in creating <strong>dynamic and good UX/UI websites</strong> using HTML, CSS, and JavaScript. 
+                    <br>
+                    <br>
+                    I am passionate about web development and always eager to learn new technologies to improve my skills. I am currently learning Vue.js, Python and NodeJS to expand my knowledge and build more interactive web applications.
                 </p>
             </div>
         </div>
@@ -35,7 +38,7 @@
                 <div class="tile-content">
                     <h2 class="tile-header">HTML</h2>
                     <p class="tile-description">HTML is a markup language used for creating web pages. It provides the structure and content of a webpage, including headings, paragraphs, images, links, and more.</p>
-                    <p class="tile-level">Level: Efficient</p>
+                    <p class="tile-level">Level: <span style="color: rgb(0, 199, 0);">Advanced</span></p>
                 </div>
             </div>
             <div class="tile">
@@ -43,7 +46,7 @@
                 <div class="tile-content">
                     <h2 class="tile-header">CSS</h2>
                     <p class="tile-description">CSS is a styling language used for describing the look and formatting of a document written in HTML. It provides the visual appearance of a webpage, including colors, layout, fonts, and more.</p>
-                    <p class="tile-level">Level: Intermediate</p>
+                    <p class="tile-level">Level: <span style="color: rgb(0, 199, 0);">Advanced</span></p>
                 </div>
             </div>
             <div class="tile">
@@ -51,7 +54,7 @@
                 <div class="tile-content">
                     <h2 class="tile-header">Javascript</h2>
                     <p class="tile-description">JavaScript (JS) allows you to add interactivity and dynamic behavior to your web pages. It is commonly used for creating interactive features, validating forms, manipulating HTML elements, and much more.</p>
-                    <p class="tile-level">Level: Beginner</p>
+                    <p class="tile-level">Level: <span style="color: yellow;">Intermediate</span></p>
                 </div>
             </div>
             
@@ -60,7 +63,7 @@
                 <div class="tile-content">
                     <h2 class="tile-header">VueJS</h2>
                     <p class="tile-description">Vue.js is a progressive JavaScript framework used for building user interfaces. It allows you to create reusable components and build interactive web applications with ease.</p>
-                    <p class="tile-level">Level: Learning</p>
+                    <p class="tile-level">Level: <span style="color: rgb(125, 212, 240);">Learning</span></p>
                 </div>
             </div>
             <div class="tile">
@@ -68,7 +71,7 @@
                 <div class="tile-content">
                     <h2 class="tile-header">Python</h2>
                     <p class="tile-description">Python is a high-level programming language known for its simplicity and readability. It is widely used for web development, data analysis, artificial intelligence, and more. Python's extensive library ecosystem and easy syntax make it a popular choice among developers.</p>
-                    <p class="tile-level">Level: Intermediate</p>
+                    <p class="tile-level">Level: <span style="color: yellow;">Intermediate</span></p>
                 </div>
             </div>
         </div>
@@ -100,28 +103,33 @@
             jsConfetti.addConfetti()
         })
 
-        
-
-        const time = new Date();
-        const copyright = document.getElementById("copyright");
-        copyright.innerHTML = '&copy; 2024 Hayden Kong. All rights reserved. The current time is: ' + time;
-        console.log(time)
-
-        async function updateTimer(){
-            const time = new Date();
-            copyright.innerHTML = '&copy; 2024 Hayden Kong. All rights reserved. The current time is: ' + time;
+        function getGreeting() {
+            const hours = new Date().getHours();
+            if (hours < 12) {
+            return "Good morning 🌅!";
+            } else if (hours < 18) {
+            return "Good afternoon 🍵!";
+            } else {
+            return "Good evening 🌆!";
+            }
         }
 
-        var t=setInterval(updatetimer(),1000);
+        function updateCopyright() {
+            const realTime = new Date();
+            const time = realTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: true });
+            const greeting = getGreeting();
+            const copyright = document.getElementById("copyright");
+            copyright.innerHTML = `&copy; 2024 Hayden Kong. All rights reserved. ${greeting} The current time is: ${time}`;
+        }
+
+        window.addEventListener('load', () => {
+            updateCopyright();
+            setInterval(updateCopyright, 1000);
+        });
 
         document.addEventListener("DOMContentLoaded", (event) => {
             console.log("DOM fully loaded and parsed");
-            
-
-            
         });
-
-        
 
 
     </script>

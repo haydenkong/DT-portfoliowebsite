@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hayden Kong</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="main.css">
     <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
 </head>
 <body>
     <main>
         <div class="hero">
             <h1 style="margin-bottom: 30px; font-size: 2.5rem;">My projects</h1>
-            <p style="margin-bottom: 30px; font-size: 1.2rem; line-height: 1.5;">View my list of projects, mostly open source & experience a live demo</p>
+            <p style="margin-bottom: 30px; font-size: 1.2rem; line-height: 1.5;">View my list of projects, mostly open source & experience a <em>live demo!</em></p>
             <a href="index.html"><button class="button" id="projectBtn">Go back</button></a>
         </div>
     
@@ -102,22 +102,6 @@
             const jsConfetti = new JSConfetti()
             jsConfetti.addConfetti()
         })
-
-        function sendMsg() {
-            console.log('DEV MODE: Message button clicked')
-            // POST REQUEST TO api.pixelverse.tech/systems/contact
-            const name = document.getElementById('name').value
-            const email = document.getElementById('email').value
-            const message = document.getElementById('message').value
-
-            console.log('DEV MODE: Name:', name)
-            console.log('DEV MODE: Email:', email)
-            console.log('DEV MODE: Message:', message)
-
-            
-
-        }
-    </script>
     </script>
     
 </body>
